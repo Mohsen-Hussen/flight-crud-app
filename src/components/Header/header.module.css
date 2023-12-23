@@ -1,0 +1,24 @@
+.header {
+  background-color: #383838;
+}
+
+.linksAlign {
+  justify-content: flex-end;
+}
+
+.whiteColor {
+  &&& {
+    color: #fff;
+  }
+}
+
+.navLink {
+  &&& {
+    color: #fff;
+  }
+
+  &&&.active {
+    border-radius: 10px;
+    background: #1B9AE1;
+  }
+}
