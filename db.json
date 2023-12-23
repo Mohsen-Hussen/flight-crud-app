@@ -1,0 +1,29 @@
+{
+	"flights": [
+		{
+			"id": 1,
+			"flightCode": "FL001",
+			"date": "2023-12-25",
+			"capacity": 150
+		},
+		{
+			"id": 2,
+			"flightCode": "FL002",
+			"date": "2024-01-10",
+			"capacity": 120
+		},
+		{
+			"id": 3,
+			"flightCode": "FL003",
+			"date": "2024-02-15",
+			"capacity": 200
+		}
+	],
+	"users": [
+		{
+			"id": 1,
+			"username": "admin",
+			"password": "admin"
+		}
+	]
+}

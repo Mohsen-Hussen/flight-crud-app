@@ -6,8 +6,8 @@ const RootLayout = () => {
 	return (
 		<Container className="mt-5">
 			<Header />
-			<Row>
-				<Col xs={{ span: 8, offset: 2 }}>
+			<Row className="justify-content-center align-items-center">
+				<Col xs={{ span: 10 }}>
 					<Outlet />
 				</Col>
 			</Row>

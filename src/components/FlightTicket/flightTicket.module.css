@@ -1,0 +1,37 @@
+.flightCard {
+  background-color: #6D3DD6;
+  border-radius: 5px;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.editBtn {
+  background-color: #8E68E0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: unset;
+}
+
+.editBtn:hover {
+  background-color: #6C4ABE;
+}
+
+.deleteBtn {
+  background-color: #E4E1EE;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: unset;
+}
+
+.deleteBtn:hover {
+  background-color: #E4E1EE;
+}
+
+.fCode,
+.fCapacity {
+  color: #fff;
+}
+
+.fCode span:nth-child(2),
+.fCapacity span:nth-child(2) {
+  font-weight: bold;
+}
