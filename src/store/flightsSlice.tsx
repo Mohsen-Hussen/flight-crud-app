@@ -17,6 +17,20 @@ export const fetchFlights = createAsyncThunk(
 	}
 );
 
+export const fetchFlight = createAsyncThunk(
+	"flights/fetchFlight",
+	async (id: number, thunkAPI) => {
+		const { rejectWithValue } = thunkAPI;
+
+		try {
+			const response = await axios.get(`${baseUrl}/${id}`);
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	}
+);
+
 const initialState: iFlightState = {
 	flights: [],
 	loading: false,
@@ -27,7 +41,11 @@ const initialState: iFlightState = {
 const flightsSlice = createSlice({
 	name: "flights",
 	initialState,
-	reducers: {},
+	reducers: {
+		cleanRecord: (state) => {
+			state.flight = null;
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			// fetch flights
@@ -40,17 +58,31 @@ const flightsSlice = createSlice({
 				(state, action: PayloadAction<iFlight[]>) => {
 					state.loading = false;
 					state.flights = action.payload;
-					console.log(
-						"🚀 ~ file: flightSlice.tsx:43 ~ action.payload:",
-						action.payload
-					);
 				}
 			)
 			.addCase(fetchFlights.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.payload as null;
+			})
+			// fetch flight
+			.addCase(fetchFlight.pending, (state) => {
+				state.loading = true;
+				state.error = null;
+			})
+			.addCase(
+				fetchFlight.fulfilled,
+				(state, action: PayloadAction<iFlight>) => {
+					state.loading = false;
+					state.flight = action.payload;
+				}
+			)
+			.addCase(fetchFlight.rejected, (state, action) => {
+				state.loading = false;
+				state.error = action.payload as null;
 			});
 	},
 });
+
+export const { cleanRecord } = flightsSlice.actions;
 
 export default flightsSlice.reducer;
