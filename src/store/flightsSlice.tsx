@@ -31,6 +31,19 @@ export const fetchFlight = createAsyncThunk(
 	}
 );
 
+export const deleteFlight = createAsyncThunk(
+	"posts/deletePost",
+	async (id: number, thunkAPI) => {
+		const { rejectWithValue } = thunkAPI;
+		try {
+			await axios.delete(`${baseUrl}/${id}`);
+			return id;
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	}
+);
+
 const initialState: iFlightState = {
 	flights: [],
 	loading: false,
@@ -77,6 +90,24 @@ const flightsSlice = createSlice({
 				}
 			)
 			.addCase(fetchFlight.rejected, (state, action) => {
+				state.loading = false;
+				state.error = action.payload as null;
+			})
+			// delte flight
+			.addCase(deleteFlight.pending, (state) => {
+				state.loading = true;
+				state.error = null;
+			})
+			.addCase(
+				deleteFlight.fulfilled,
+				(state, action: PayloadAction<number>) => {
+					state.loading = false;
+					state.flights = state.flights.filter(
+						(el) => el.id !== action.payload
+					);
+				}
+			)
+			.addCase(deleteFlight.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.payload as null;
 			});

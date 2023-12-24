@@ -21,6 +21,17 @@
   background-color: #6C4ABE;
 }
 
+.detailsBtn {
+  background-color: #5234A5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: unset;
+  margin-bottom: 0.5rem;
+}
+
+.detailsBtn:hover {
+  background-color: #8E68E0;
+}
+
 .deleteBtn {
   background-color: #E4E1EE;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -29,7 +40,7 @@
 }
 
 .deleteBtn:hover {
-  background-color: #E4E1EE;
+  background-color: #FFD3E4;
 }
 
 .fCode,
