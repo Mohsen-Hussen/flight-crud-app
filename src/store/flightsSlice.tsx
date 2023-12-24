@@ -44,6 +44,23 @@ export const deleteFlight = createAsyncThunk(
 	}
 );
 
+export const insertFlight = createAsyncThunk(
+	"posts/insertPost",
+	async (item: iFlight, thunkAPI) => {
+		const { rejectWithValue } = thunkAPI;
+		try {
+			const response = await axios.post(baseUrl, item, {
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
+			});
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	}
+);
+
 const initialState: iFlightState = {
 	flights: [],
 	loading: false,
@@ -108,6 +125,22 @@ const flightsSlice = createSlice({
 				}
 			)
 			.addCase(deleteFlight.rejected, (state, action) => {
+				state.loading = false;
+				state.error = action.payload as null;
+			})
+			//create flight
+			.addCase(insertFlight.pending, (state) => {
+				state.loading = true;
+				state.error = null;
+			})
+			.addCase(
+				insertFlight.fulfilled,
+				(state, action: PayloadAction<iFlight>) => {
+					state.loading = false;
+					state.flights.push(action.payload);
+				}
+			)
+			.addCase(insertFlight.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.payload as null;
 			});

@@ -1,7 +1,7 @@
 export interface iFlight {
 	id: number;
 	flightCode: string;
-	date: Date;
+	date: Date | string;
 	capacity: number;
 }
 

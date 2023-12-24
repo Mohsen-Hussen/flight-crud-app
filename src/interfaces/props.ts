@@ -6,6 +6,7 @@ export interface FlightTicketProps {
 
 export interface DeleteConfirmationModalProps {
 	show: boolean;
+	fCode: string;
 	onHide: () => void;
 	onConfirmDelete: () => void;
 }

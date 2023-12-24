@@ -1,0 +1,14 @@
+.form {
+  border-radius: 15px;
+  background: linear-gradient(146deg, #260076 1.42%, #C0ACEC 99.34%);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.form label {
+  color: #fff;
+}
+
+.errorMsg {
+  color: #fff;
+}

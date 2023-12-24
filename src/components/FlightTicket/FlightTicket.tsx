@@ -77,6 +77,7 @@ const FlightTicket = ({ flight }: FlightTicketProps) => {
 				show={showModal}
 				onHide={handleCloseModal}
 				onConfirmDelete={handleDelete}
+				fCode={flight.flightCode}
 			/>
 		</>
 	);
