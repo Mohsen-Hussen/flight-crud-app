@@ -38,7 +38,10 @@ const FlightTicket = ({ flight }: FlightTicketProps) => {
 		<>
 			<div className={style.flightCard}>
 				<div className="d-flex justify-content-between align-items-center mb-2">
-					<Button className={style.editBtn}>
+					<Button
+						className={style.editBtn}
+						onClick={() => navigate(`flight/${flight.id}/edit`)}
+					>
 						<Edit size="20" color="#fff" />
 					</Button>
 					<Button

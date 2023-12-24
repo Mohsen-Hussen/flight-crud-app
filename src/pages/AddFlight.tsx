@@ -5,19 +5,14 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addFlightSchema } from "../util/validaionSchemas";
 import { insertFlight } from "../store/flightsSlice";
+import { AddFlightFormData } from "../interfaces/props";
 import { Button, Form } from "react-bootstrap";
 import style from "./addFlight.module.css";
-
-interface AddFlightFormData {
-	flightCode: string;
-	date: Date;
-	capacity: number;
-}
 
 const AddFlight = () => {
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
-	const { flight } = useAppSelector((state) => state.flights);
+	const { flight, loading } = useAppSelector((state) => state.flights);
 	// **Add a state variable to store the selected date as a string**
 	const [selectedDateString, setSelectedDateString] = useState<string>(
 		flight?.date?.toString().split("T")[0] || ""
@@ -102,9 +97,28 @@ const AddFlight = () => {
 					{errors.date?.message}
 				</Form.Control.Feedback>
 			</Form.Group>
-			<Button variant="primary" type="submit">
-				Submit
-			</Button>
+			<div className="d-flex justify-content-center align-item-center">
+				{loading ? (
+					<Button
+						variant="primary"
+						type="submit"
+						size="lg"
+						className={style.addBtn}
+						disabled={true}
+					>
+						Loading ...
+					</Button>
+				) : (
+					<Button
+						variant="primary"
+						type="submit"
+						size="lg"
+						className={style.addBtn}
+					>
+						Add Flight
+					</Button>
+				)}
+			</div>
 		</Form>
 	);
 };

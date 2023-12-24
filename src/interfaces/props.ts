@@ -10,3 +10,9 @@ export interface DeleteConfirmationModalProps {
 	onHide: () => void;
 	onConfirmDelete: () => void;
 }
+
+export interface AddFlightFormData {
+	flightCode: string;
+	date: Date;
+	capacity: number;
+}

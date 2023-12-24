@@ -61,6 +61,23 @@ export const insertFlight = createAsyncThunk(
 	}
 );
 
+export const editFlight = createAsyncThunk(
+	"posts/editPost",
+	async (item: iFlight, thunkAPI) => {
+		const { rejectWithValue } = thunkAPI;
+		try {
+			const response = await axios.patch(`${baseUrl}/${item?.id}`, item, {
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
+			});
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	}
+);
+
 const initialState: iFlightState = {
 	flights: [],
 	loading: false,
@@ -110,7 +127,7 @@ const flightsSlice = createSlice({
 				state.loading = false;
 				state.error = action.payload as null;
 			})
-			// delte flight
+			// delete flight
 			.addCase(deleteFlight.pending, (state) => {
 				state.loading = true;
 				state.error = null;
@@ -141,6 +158,21 @@ const flightsSlice = createSlice({
 				}
 			)
 			.addCase(insertFlight.rejected, (state, action) => {
+				state.loading = false;
+				state.error = action.payload as null;
+			}) // edit flight
+			.addCase(editFlight.pending, (state) => {
+				state.loading = true;
+				state.error = null;
+			})
+			.addCase(
+				editFlight.fulfilled,
+				(state, action: PayloadAction<iFlight>) => {
+					state.loading = false;
+					state.flight = action.payload;
+				}
+			)
+			.addCase(editFlight.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.payload as null;
 			});

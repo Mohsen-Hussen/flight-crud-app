@@ -9,14 +9,14 @@
     {
       "id": 2,
       "flightCode": "FL002",
-      "date": "2024-4-25",
+      "date": "2024-04-24",
       "capacity": 200
     },
     {
       "id": 3,
       "flightCode": "FL003",
-      "date": "2024-8-10",
-      "capacity": 160
+      "date": "2024-01-29",
+      "capacity": 100
     },
     {
       "id": 305,
@@ -33,7 +33,7 @@
     {
       "id": 59,
       "flightCode": "FL100",
-      "date": "2024-03-21",
+      "date": "2024-01-27",
       "capacity": 90
     },
     {
@@ -51,8 +51,8 @@
     {
       "id": 288,
       "flightCode": "FL65",
-      "date": "2024-03-22",
-      "capacity": 255
+      "date": "2024-04-25",
+      "capacity": 55
     }
   ],
   "users": [
