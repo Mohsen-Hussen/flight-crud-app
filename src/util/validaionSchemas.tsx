@@ -15,3 +15,20 @@ export const addFlightSchema = Yup.object().shape({
 		.max(300, "Capacity must be at most 300")
 		.typeError("Capacity must be a number"),
 });
+
+export const registerSchema = Yup.object({
+	username: Yup.string().required("Username is required"),
+	password: Yup.string()
+		.required("Password is required")
+		.min(8, "Password must be at least 8 characters"),
+	confirmPassword: Yup.string()
+		.required("Confirm password is required")
+		.oneOf([Yup.ref("password")], "Passwords must match"),
+});
+
+export const logInSchema = Yup.object({
+	usernameInput: Yup.string().required("Username is required"),
+	password: Yup.string()
+		.required("Password is required")
+		.min(8, "Password must be at least 8 characters"),
+});

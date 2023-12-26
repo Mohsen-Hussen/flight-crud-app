@@ -1,85 +1,65 @@
 {
-  "flights": [
-    {
-      "id": 1,
-      "flightCode": "FL001",
-      "date": "2023-12-30",
-      "capacity": 120
-    },
-    {
-      "id": 2,
-      "flightCode": "FL002",
-      "date": "2024-04-24",
-      "capacity": 200
-    },
-    {
-      "id": 3,
-      "flightCode": "FL003",
-      "date": "2024-01-24",
-      "capacity": 100
-    },
-    {
-      "id": 305,
-      "flightCode": "FL010",
-      "date": "2024-01-17",
-      "capacity": 150
-    },
-    {
-      "id": 482,
-      "flightCode": "FL015",
-      "date": "2024-02-09",
-      "capacity": 50
-    },
-    {
-      "id": 59,
-      "flightCode": "FL100",
-      "date": "2024-04-18",
-      "capacity": 90
-    },
-    {
-      "id": 446,
-      "flightCode": "FL130",
-      "date": "2024-04-10",
-      "capacity": 165
-    },
-    {
-      "id": 256,
-      "flightCode": "FL89",
-      "date": "2024-02-13",
-      "capacity": 60
-    },
-    {
-      "id": 288,
-      "flightCode": "FL65",
-      "date": "2024-05-16",
-      "capacity": 55
-    }
-  ],
-  "users": [
-    {
-      "id": 126,
-      "username": "mohsen",
-      "password": "mohsentest1"
-    },
-    {
-      "id": 276,
-      "username": "hamza",
-      "password": "hamza10818"
-    },
-    {
-      "id": 25,
-      "username": "zezo",
-      "password": "zezo1234"
-    },
-    {
-      "id": 462,
-      "username": "taher",
-      "password": "taher1234"
-    },
-    {
-      "id": 150,
-      "username": "maged",
-      "password": "magedtest1"
-    }
-  ]
+	"flights": [
+		{
+			"id": 1,
+			"flightCode": "FL001",
+			"date": "2024-05-24",
+			"capacity": 120
+		},
+		{
+			"id": 2,
+			"flightCode": "FL002",
+			"date": "2024-04-24",
+			"capacity": 200
+		},
+		{
+			"id": 3,
+			"flightCode": "FL003",
+			"date": "2024-01-24",
+			"capacity": 100
+		},
+		{
+			"id": 305,
+			"flightCode": "FL010",
+			"date": "2024-01-17",
+			"capacity": 150
+		},
+		{
+			"id": 482,
+			"flightCode": "FL015",
+			"date": "2024-02-09",
+			"capacity": 50
+		},
+		{
+			"id": 59,
+			"flightCode": "FL100",
+			"date": "2024-04-18",
+			"capacity": 90
+		},
+		{
+			"id": 446,
+			"flightCode": "FL130",
+			"date": "2024-04-10",
+			"capacity": 165
+		},
+		{
+			"id": 256,
+			"flightCode": "FL89",
+			"date": "2024-02-13",
+			"capacity": 60
+		},
+		{
+			"id": 288,
+			"flightCode": "FL65",
+			"date": "2024-05-16",
+			"capacity": 55
+		}
+	],
+	"users": [
+		{
+			"id": 1,
+			"username": "admin",
+			"password": "admin1234"
+		}
+	]
 }

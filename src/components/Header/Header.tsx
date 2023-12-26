@@ -1,9 +1,19 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./header.module.css";
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { logoutUser } from "../../store/authSclice";
 
 const Header = () => {
 	const location = useLocation();
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
+
+	const handleLogout = async (e: { preventDefault: () => void }) => {
+		e.preventDefault(); // Prevent default link behavior
+		await dispatch(logoutUser()); // Await logout completion
+		navigate("/login");
+	};
 	return (
 		<Navbar expand="lg" className={style.header}>
 			<Container>
@@ -30,6 +40,16 @@ const Header = () => {
 							}`}
 						>
 							Add
+						</Nav.Link>
+						<Nav.Link
+							as={Link}
+							to="/login"
+							className={`${style.navLink} ${
+								location.pathname === "/login" ? style.active : ""
+							}`}
+							onClick={handleLogout}
+						>
+							Logout
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

@@ -12,6 +12,7 @@ import AddFlight from "./pages/AddFlight";
 import FlightDetails from "./pages/FlightDetails";
 import EditFlight from "./pages/EditFlight";
 import RegisterForm from "./pages/RegisterForm";
+import LoginForm from "./pages/LoginForm";
 
 const router = createBrowserRouter([
 	{
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
 			{ path: "flight/:id", element: <FlightDetails /> },
 			{ path: "flight/:id/edit", element: <EditFlight /> },
 			{ path: "/register", element: <RegisterForm /> },
+			{ path: "/login", element: <LoginForm /> },
 		],
 	},
 ]);

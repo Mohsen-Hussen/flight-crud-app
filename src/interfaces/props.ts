@@ -22,3 +22,8 @@ export interface addUser {
 	password: string;
 	confirmPassword: string;
 }
+
+export interface loginUser {
+	usernameInput: string;
+	password: string;
+}

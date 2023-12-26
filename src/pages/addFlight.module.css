@@ -20,3 +20,10 @@
   border: transparent;
   width: 20vw;
 }
+
+.registerLink,
+.registerLink a {
+  color: #fff;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
