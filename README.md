@@ -10,9 +10,13 @@ Currently, two official plugins are available:
 ## Follow this instructions to run the app
 
 1- clone the app.
+
 2- open the app folder at your terminal.
+
 3- write this command to activate the json-server and press enter (npm start).
+
 4- open the app folder at another terminal.
+
 5- write this command to run the app and press enter (npm run dev).
 
 ## Expanding the ESLint configuration
