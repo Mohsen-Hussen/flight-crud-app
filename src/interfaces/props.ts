@@ -16,3 +16,9 @@ export interface AddFlightFormData {
 	date: Date;
 	capacity: number;
 }
+
+export interface addUser {
+	username: string;
+	password: string;
+	confirmPassword: string;
+}

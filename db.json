@@ -15,7 +15,7 @@
     {
       "id": 3,
       "flightCode": "FL003",
-      "date": "2024-01-29",
+      "date": "2024-01-24",
       "capacity": 100
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": 59,
       "flightCode": "FL100",
-      "date": "2024-01-27",
+      "date": "2024-04-18",
       "capacity": 90
     },
     {
@@ -51,15 +51,35 @@
     {
       "id": 288,
       "flightCode": "FL65",
-      "date": "2024-04-25",
+      "date": "2024-05-16",
       "capacity": 55
     }
   ],
   "users": [
     {
-      "id": 1,
-      "username": "admin",
-      "password": "admin"
+      "id": 126,
+      "username": "mohsen",
+      "password": "mohsentest1"
+    },
+    {
+      "id": 276,
+      "username": "hamza",
+      "password": "hamza10818"
+    },
+    {
+      "id": 25,
+      "username": "zezo",
+      "password": "zezo1234"
+    },
+    {
+      "id": 462,
+      "username": "taher",
+      "password": "taher1234"
+    },
+    {
+      "id": 150,
+      "username": "maged",
+      "password": "magedtest1"
     }
   ]
 }

@@ -11,3 +11,10 @@ export interface iFlightState {
 	error: null;
 	flight: iFlight | null;
 }
+
+export interface iUser {
+	id: number | null;
+	username: string | null;
+	password: string | null;
+	isAuthenticated?: boolean;
+}

@@ -73,7 +73,9 @@ const FlightTicket = ({ flight }: FlightTicketProps) => {
 					className={`d-flex justify-content-between align-items-center ${style.fDate}`}
 				>
 					<span>Date</span>
-					<span>{flight.date.toLocaleString()}</span>
+					<span>
+						{flight.date ? flight.date.toLocaleString() : "Date unavailable"}
+					</span>
 				</div>
 			</div>
 			<ConfirmModal
