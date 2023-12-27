@@ -13,6 +13,7 @@ import FlightDetails from "./pages/FlightDetails";
 import EditFlight from "./pages/EditFlight";
 import RegisterForm from "./pages/RegisterForm";
 import LoginForm from "./pages/LoginForm";
+import ProtectedRoute from "./util/ProtectedRoute";
 
 const router = createBrowserRouter([
 	{
@@ -22,9 +23,15 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <Index /> },
 			{ path: "flight", element: <Index /> },
-			{ path: "flight/add", element: <AddFlight /> },
-			{ path: "flight/:id", element: <FlightDetails /> },
-			{ path: "flight/:id/edit", element: <EditFlight /> },
+			{ path: "flight/add", element: <ProtectedRoute component={AddFlight} /> },
+			{
+				path: "flight/:id",
+				element: <ProtectedRoute component={FlightDetails} />,
+			},
+			{
+				path: "flight/:id/edit",
+				element: <ProtectedRoute component={EditFlight} />,
+			},
 			{ path: "/register", element: <RegisterForm /> },
 			{ path: "/login", element: <LoginForm /> },
 		],
